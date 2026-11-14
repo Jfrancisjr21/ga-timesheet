@@ -1,0 +1,24 @@
+{% load static tailwind_cli %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}GA Timesheet{% endblock %}</title>
+  {% tailwind_css %}
+  <script src="{% static 'js/htmx.min.js' %}" defer></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+  <header class="border-b-4 border-accent bg-brand text-on-brand">
+    <div class="mx-auto flex max-w-5xl items-center gap-3 px-4 py-3">
+      {# Phase 2 adds the menu button on this line #}
+      <a href="{% url 'home' %}" class="flex items-center gap-2 font-semibold"><img src="{% static 'img/logo.svg' %}" alt="" class="h-8 w-auto">GA Timesheet</a>
+    </div>
+  </header>
+  <main class="mx-auto max-w-5xl px-4 py-6">
+    {% for message in messages %}
+      <div class="mb-4 rounded-lg border px-4 py-3 text-sm {% if message.tags == 'error' %}border-red-300 bg-red-50 text-red-800{% else %}border-emerald-300 bg-emerald-50 text-emerald-800{% endif %}" role="status">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
