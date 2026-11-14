@@ -25,7 +25,7 @@ jobs:
       MS_CLIENT_ID: ci-placeholder
       TIME_ZONE: America/New_York
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v6
       - name: PDF libraries
         run: sudo apt-get update && sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0
