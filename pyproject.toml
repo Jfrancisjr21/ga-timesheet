@@ -5,7 +5,7 @@ description = "Geofenced time clock for graduate assistants"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "django~=5.2",
+    "django>=5.2,<7.0",
     "django-allauth[socialaccount]>=65.22.1",
     "django-environ>=0.14.0",
     "django-htmx>=1.29.0",
