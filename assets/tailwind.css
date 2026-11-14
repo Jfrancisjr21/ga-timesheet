@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/static/fonts/source-sans-3.woff2") format("woff2");
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+@theme {
+  --color-brand: #1e3a5f;       /* main school color: header, main buttons */
+  --color-on-brand: #ffffff;    /* text on the main color */
+  --color-accent: #f2b233;      /* second school color: the header stripe */
+  --color-brand-tint: #e9edf2;  /* very pale main color: selected items, table headers */
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+}
